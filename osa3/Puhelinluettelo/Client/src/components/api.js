@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "/api/persons"; //https://fullstack-puhelinluettelo1.herokuapp.com/api/persons
+const baseUrl = "https://fullstack-puhelinluettelo1.herokuapp.com/api/persons";
 
 const getAll = () => {
   return axios.get(baseUrl);
