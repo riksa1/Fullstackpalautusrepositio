@@ -76,7 +76,6 @@ app.put("/api/persons/:id", (req, res, next) => {
     name: name,
     number: number,
   };
-  console.log(id, "heres the id");
   Person.findByIdAndUpdate(id, person, {
     new: true,
     runValidators: true,
@@ -105,7 +104,6 @@ app.use(unknownEndpoint);
 
 const errorHandler = (error, request, response, next) => {
   console.error(error.message);
-  console.log(error.name, "yo");
 
   if (error.name === "CastError") {
     return response.status(400).send({ error: "malformatted id" });

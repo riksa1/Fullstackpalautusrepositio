@@ -67,7 +67,6 @@ const App = () => {
       personService
         .create(newNameObject)
         .then((result) => {
-          console.log(result);
           setPersons([
             ...persons,
             { name: newName, number: newNumber, id: result.data.id },
