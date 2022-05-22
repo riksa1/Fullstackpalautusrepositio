@@ -28,7 +28,6 @@ const App = () => {
         )
       ) {
         var person = persons.find((person) => person.name === newName);
-        console.log(person, "Hello");
         personService
           .update(person.id, {
             name: newName,
@@ -68,7 +67,11 @@ const App = () => {
       personService
         .create(newNameObject)
         .then((result) => {
-          setPersons([...persons, { name: newName, number: newNumber }]);
+          console.log(result);
+          setPersons([
+            ...persons,
+            { name: newName, number: newNumber, id: result.data.id },
+          ]);
           setSuccessMessage(`Added ${newName}!`);
           setTimeout(() => {
             setSuccessMessage(null);

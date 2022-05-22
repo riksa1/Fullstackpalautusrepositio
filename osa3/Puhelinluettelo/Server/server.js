@@ -63,9 +63,7 @@ app.post("/api/persons", (req, res, next) => {
     person
       .save()
       .then((savedNote) => {
-        res.status(200).json({
-          answer: "Job done!",
-        });
+        res.status(200).json(savedNote);
       })
       .catch((error) => next(error));
   }
